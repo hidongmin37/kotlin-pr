@@ -21,4 +21,5 @@ public class Lec05Main {
     System.out.println("주어지는 숫자는 홀수입니다");
   }
 
+
 }
