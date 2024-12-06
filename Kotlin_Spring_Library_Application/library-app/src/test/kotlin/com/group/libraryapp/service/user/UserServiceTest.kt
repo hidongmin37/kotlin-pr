@@ -4,6 +4,7 @@ import com.group.libraryapp.domain.user.User
 import com.group.libraryapp.domain.user.UserRepository
 import com.group.libraryapp.dto.user.request.UserCreateRequest
 import com.group.libraryapp.dto.user.request.UserUpdateRequest
+import com.group.libraryapp.util.fail
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
@@ -34,8 +35,8 @@ class UserServiceTest @Autowired constructor(
         val findAll = userRepository.findAll()
         assertThat(findAll).hasSize(1)
 
-        val findByName = userRepository.findByName("장동민")
-        assertThat(findByName.get().name).isEqualTo("장동민")
+        val findByName = userRepository.findByName("장동민") ?: fail()
+        assertThat(findByName.name).isEqualTo("장동민")
         assertThat(findAll[0].age).isNull()
 
 
