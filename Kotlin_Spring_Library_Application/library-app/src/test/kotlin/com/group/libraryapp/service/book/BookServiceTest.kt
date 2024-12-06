@@ -4,8 +4,8 @@ import com.group.libraryapp.domain.book.Book
 import com.group.libraryapp.domain.book.BookRepository
 import com.group.libraryapp.domain.user.User
 import com.group.libraryapp.domain.user.UserLoanHistory
+import com.group.libraryapp.domain.user.UserLoanHistoryRepository
 import com.group.libraryapp.domain.user.UserRepository
-import com.group.libraryapp.domain.user.loanhistory.UserLoanHistoryRepository
 import com.group.libraryapp.dto.book.request.BookLoanRequest
 import com.group.libraryapp.dto.book.request.BookRequest
 import com.group.libraryapp.dto.book.request.BookReturnRequest
@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class JavaBookServiceTest @Autowired constructor(
+class BookServiceTest @Autowired constructor(
     private val bookService: BookService,
     private val bookRepository: BookRepository,
     private val userRepository: UserRepository,
@@ -57,7 +57,7 @@ class JavaBookServiceTest @Autowired constructor(
         val book = Book("이상한 나라의 앨리스")
         bookRepository.save(book)
 
-        val user = User("A", null)
+        val user = User("A",null) // user 생성
         userRepository.save(user)
 
         val request = BookLoanRequest(user.name, book.name)

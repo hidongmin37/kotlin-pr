@@ -1,22 +1,24 @@
 package com.group.libraryapp.domain.user
 
+import com.group.libraryapp.domain.book.Book
 import javax.persistence.*
 
 
 @Entity
 class User(
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
-
     var name: String,
 
     val age: Int?,
 
     @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL],orphanRemoval = true)
-    val userLoanHistories: List<UserLoanHistory> = mutableListOf()
+    val userLoanHistories: MutableList<UserLoanHistory> = mutableListOf(),
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long? = null
 ) {
+
+
     init {
         if (name.isBlank()) {
             throw IllegalArgumentException("이름은 비어 있을 수 없습니다.")
@@ -25,5 +27,15 @@ class User(
 
     fun updateName(name: String) {
        this.name = name
+    }
+
+    fun loanBook(book: Book) {
+        userLoanHistories.add(UserLoanHistory(this, book.name, false))
+    }
+
+    fun returnBook(bookName: String) {
+        this.userLoanHistories.first{
+            history -> history.bookName == bookName
+        }.doReturn()
     }
 }
