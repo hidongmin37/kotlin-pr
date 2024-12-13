@@ -3,6 +3,7 @@ package com.group.libraryapp.service.book
 import com.group.libraryapp.domain.book.Book
 import com.group.libraryapp.domain.book.BookRepository
 import com.group.libraryapp.domain.user.UserLoanHistoryRepository
+import com.group.libraryapp.domain.user.UserLoanStatus
 import com.group.libraryapp.domain.user.UserRepository
 import com.group.libraryapp.dto.book.request.BookLoanRequest
 import com.group.libraryapp.dto.book.request.BookRequest
@@ -20,14 +21,14 @@ class BookService(
 
     @Transactional
     fun saveBook(bookRequest: BookRequest) {
-        val newBook = Book(bookRequest.name)
+        val newBook = Book(bookRequest.name, bookRequest.type)
         bookRepository.save(newBook)
     }
 
     @Transactional
     fun loanBook(request: BookLoanRequest) {
         val book = bookRepository.findByName(request.bookName) ?: fail()
-        if (userLoanHistoryRepository.findByBookNameAndReturned(request.bookName, false) != null) {
+        if (userLoanHistoryRepository.findByBookNameAndStatus(request.bookName, UserLoanStatus.LOANED) != null) {
             throw IllegalArgumentException("이미 대출되어 있는 책입니다.")
         }
         val user = userRepository.findByName(request.userName) ?: fail()
