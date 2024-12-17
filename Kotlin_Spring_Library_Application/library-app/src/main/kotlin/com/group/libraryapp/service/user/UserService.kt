@@ -1,5 +1,8 @@
 package com.group.libraryapp.service.user
 
+import com.group.libraryapp.domain.book.Book
+import com.group.libraryapp.domain.book.BookRepository
+import com.group.libraryapp.domain.book.BookType
 import com.group.libraryapp.domain.user.User
 import com.group.libraryapp.domain.user.UserRepository
 import com.group.libraryapp.dto.user.request.UserCreateRequest
@@ -14,8 +17,19 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 class UserService(
-    private val userRepository: UserRepository,
+    private val userRepository: UserRepository, private val bookRepository: BookRepository,
 ) {
+
+    @Transactional // 테스트코드에서는 있든 없든 통과할 수 있음 transactional 어노테이션이 테스트 코드에 있다면
+    fun saveUserAndLoanTwoBooks() {
+        val newUser = User("A",123)
+        val books = bookRepository.saveAll(listOf(
+            Book("책1",BookType.COMPUTER),
+            Book("책2",BookType.COMPUTER),
+        ))
+        books.forEach {book -> newUser.loanBook(book)}
+        userRepository.save(newUser)
+    }
 
     @Transactional
     fun saveUser(userRequest: UserCreateRequest) {

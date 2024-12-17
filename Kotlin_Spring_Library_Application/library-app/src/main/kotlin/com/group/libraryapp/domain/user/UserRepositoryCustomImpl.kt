@@ -13,7 +13,7 @@ class UserRepositoryCustomImpl(
     override fun findAllWithHistories(): List<User> {
         return queryFactory.selectFrom(user)
             .distinct()
-            .leftJoin(userLoanHistory).on(userLoanHistory.user.id.eq(user.id))
+            .leftJoin(user.userLoanHistories, userLoanHistory)
             .fetchJoin()
             .fetch()
     }
