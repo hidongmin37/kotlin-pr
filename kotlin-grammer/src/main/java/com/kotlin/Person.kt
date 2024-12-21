@@ -1,8 +1,9 @@
 package com.kotlin
 
-sealed class Person(
+open class Person(
     val name: String,
-    val isMarried: Boolean)
+    val isMarried: Boolean
+)
 
 
 class Family(
@@ -33,5 +34,8 @@ fun getSpecialSkill(person: Person): String {
     return when (person) {
         is Developer -> person.language
         is Marketer -> person.division.toString()
+        else -> {
+            "no special skill"
+        }
     }
 }
