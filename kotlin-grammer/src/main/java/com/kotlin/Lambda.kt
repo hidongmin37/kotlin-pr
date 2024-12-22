@@ -1,8 +1,8 @@
 package com.kotlin
 
 data class Hero(
-    val name: String,
-    val age: Int
+    var name: String,
+    var age: Int
 )
 
 val heroes = listOf(
