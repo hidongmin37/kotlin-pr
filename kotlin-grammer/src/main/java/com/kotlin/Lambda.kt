@@ -7,9 +7,9 @@ data class Hero(
 
 val heroes = listOf(
     Hero("Captain", 44),
-    Hero("Cyclops", 35),
+    Hero("Cyclops", 33),
     Hero("Wolverine", 45),
-    Hero("Storm", 35),
+    Hero("Storm", 30),
     Hero("Jean Grey", 35)
 )
 
