@@ -19,7 +19,7 @@ class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception::class)
     fun handlePaymentException(e: Exception): ErrorResponse {
-        log.error(e) { "Exception is occurred." }
+        log.error(e) { "Exception is occurred" }
         return ErrorResponse(ErrorCode.INTERVAL_SERVER_ERROR)
     }
 
