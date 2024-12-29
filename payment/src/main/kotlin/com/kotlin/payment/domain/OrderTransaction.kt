@@ -21,4 +21,6 @@ class OrderTransaction(
     var transactionAt: LocalDateTime? = null,
     var failureCode: String? = null,
     var description: String? = null
-) : BaseEntity()
+) : BaseEntity() {
+
+}
