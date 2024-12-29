@@ -12,8 +12,8 @@ class GlobalExceptionHandler {
 
     @ExceptionHandler(PaymentException::class)
     fun handlePaymentException(e: PaymentException): ErrorResponse {
-        log.error(e) { "${e.errorMessage} is occurred." }
-        log.error(e) { e.errorCode.name + " is occurred." }
+        log.error(e) { "${e.errorMessage} is occurred" }
+        log.error(e) { e.errorCode.name + " is occurred" }
         return ErrorResponse(e.errorCode)
     }
 
