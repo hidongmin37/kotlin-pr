@@ -5,8 +5,8 @@ import java.time.LocalDateTime
 
 @Service
 class PaymentService(
-    private val paymentStatusService: PaymentStatusService  // 생성자 주입으로 변경
-
+    private val paymentStatusService: PaymentStatusService, // 생성자 주입으로 변경
+    private val accountService: AccountService
 ) {
 
 
@@ -21,13 +21,18 @@ class PaymentService(
             merchantTransactionId = payServiceRequest.merchantTransactionId
         )
         // 계좌에 금액 사용 요청
+        val payMethodTransactionId = accountService.useAccount(orderId)
+
+
         // 성공: 거래를 성공으로 저장
+        val (transactionId, transactedAt) = paymentStatusService.saveAsSuccess(orderId, payMethodTransactionId)
+
         // 실패: 거래를 실패로 저장
         return PayServiceResponse(
-            payUserId = "payUserId",
-            amount = 100,
-            transactionId = "transactionId",
-            transactedAt = LocalDateTime.now()
+            payUserId = payServiceRequest.payUserId,
+            amount = payServiceRequest.amount,
+            transactionId = transactionId,
+            transactedAt = transactedAt
         )
     }
 }

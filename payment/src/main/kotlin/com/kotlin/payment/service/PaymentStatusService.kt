@@ -8,8 +8,9 @@ import com.kotlin.payment.repository.OrderTransactionRepository
 import com.kotlin.payment.repository.PaymentUserRepository
 import com.kotlin.payment.util.generateOrderId
 import com.kotlin.payment.util.generateTransactionId
-import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
+import java.time.LocalDateTime
 
 /*
 * 결제의 요청 저장, 성공,실패 저장
@@ -56,6 +57,30 @@ class PaymentStatusService(
         )
 
         return order.id ?: throw PaymentException(ErrorCode.INTERVAL_SERVER_ERROR)
+    }
 
+    @Transactional
+    fun saveAsSuccess(orderId: Long, payMethodTransactionId: String):
+            Pair<String, LocalDateTime> {
+        val order: Order = orderRepository.findById(orderId)
+            .orElseThrow { throw PaymentException(ErrorCode.ORDER_NOT_FOUND) }
+            .apply {
+                orderStatus = OrderStatus.PAID
+                paidAmount = orderAmount
+            }
+
+        val orderTransaction = orderTransactionRepository.findByOrderAndTransactionType(
+            order = order,
+            transactionType = TransactionType.PAYMENT
+        ).first().apply {
+            transactionStatus = TransactionStatus.SUCCESS
+            this.payMethodTransactionId = payMethodTransactionId
+            transactedAt = LocalDateTime.now()
+        }
+
+        return Pair(
+            orderTransaction.transactionId,
+            orderTransaction.transactedAt ?: throw PaymentException(ErrorCode.INTERVAL_SERVER_ERROR)
+        )
     }
 }

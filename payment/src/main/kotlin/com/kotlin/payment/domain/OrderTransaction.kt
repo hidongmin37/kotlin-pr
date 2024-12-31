@@ -14,13 +14,13 @@ class OrderTransaction(
     @Enumerated(EnumType.STRING)
     val transactionType: TransactionType, // 결제, 취소, 망취소
     @Enumerated(EnumType.STRING)
-    val transactionStatus: TransactionStatus, // 생성, 성공, 실패
+    var transactionStatus: TransactionStatus, // 생성, 성공, 실패
+
     val transactionAmount: Long,
     val merchantTransactionId: String,
-    var paymentMethodTransactionId: String? = null,
-    var transactionAt: LocalDateTime? = null,
-    var failureCode: String? = null,
-    var description: String? = null
+    var payMethodTransactionId: String? = null,
+    var transactedAt: LocalDateTime? = null,
+    var failureCode: String? = null, // 실패될 때만 저장 됨.
+    var description: String? = null,
 ) : BaseEntity() {
-
 }
