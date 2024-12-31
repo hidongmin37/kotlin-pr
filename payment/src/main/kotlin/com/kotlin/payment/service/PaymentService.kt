@@ -4,9 +4,11 @@ import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 
 @Service
-class PaymentService {
+class PaymentService(
+    private val paymentStatusService: PaymentStatusService  // 생성자 주입으로 변경
 
-    private final val paymentStatusService: PaymentStatusService = TODO("initialize me")
+) {
+
 
     fun pay(
         payServiceRequest: PayServiceRequest
