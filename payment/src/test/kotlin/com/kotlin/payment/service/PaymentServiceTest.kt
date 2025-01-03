@@ -64,7 +64,7 @@ internal class PaymentServiceTest {
             payUserId = "payUserId",
             amount = 100,
             merchantTransactionId = "merchantTransactionId",
-            orderTitle = "orderTitle"
+            orderTitle = "orderTitlee"
         )
         every {
             paymentStatusService.savePayRequest(any(), any(), any(), any())
