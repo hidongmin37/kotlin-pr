@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun eatACake() = println("케이크 먹기")
 fun bakeACake() = println("케이크 굽기")
 

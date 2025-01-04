@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 sealed class Mammal(val name: String)                                          // 1
 
 class Cat(val catName: String) : Mammal(catName)                               // 2
@@ -9,9 +11,11 @@ fun greetMammal(mammal: Mammal): String {
             return "안녕하세요, ${mammal.name}님. 직업은 ${mammal.job}이군요."      // 4
         is Cat ->
             return "안녕 ${mammal.name}"                                        // 5
+        else -> return "새로운 포유류"
     }                                                                          // 6
 }
 
 fun main() {
     println(greetMammal(Cat("Snowy")))
+    println(greetMammal(Human("Snowy", "nurse")))
 }

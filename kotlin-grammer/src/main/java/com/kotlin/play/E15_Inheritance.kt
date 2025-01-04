@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 open class Dog {                // 1
     open fun sayHello() {       // 2
         println("멍멍!")

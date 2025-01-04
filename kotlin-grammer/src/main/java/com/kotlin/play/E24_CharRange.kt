@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun main() {
     for (c in 'a'..'d') {              // 1
         print(c)

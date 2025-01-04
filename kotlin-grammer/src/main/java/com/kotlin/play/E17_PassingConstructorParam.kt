@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 open class Lion(val name: String, val origin: String) {
     fun sayHello() {
         println("$name, ${origin}에서 온 사자 왈: 으르렁!")

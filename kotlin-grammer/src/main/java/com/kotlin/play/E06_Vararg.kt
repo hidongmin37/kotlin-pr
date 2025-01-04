@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun main() {
     fun printAll(vararg messages: String) {                            // 1
         for (m in messages) println(m)

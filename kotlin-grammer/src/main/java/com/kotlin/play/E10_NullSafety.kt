@@ -16,5 +16,6 @@ fun main() {
     }
 
     strLength(neverNull)                                     // 8
-//    strLength(nullable)                                      // 9 - Type mismatch: inferred type is Nothing? but String was expected
+    if (nullable != null) strLength(nullable)                                      // 9 - Type mismatch: inferred type is Nothing? but String was expected
+
 }

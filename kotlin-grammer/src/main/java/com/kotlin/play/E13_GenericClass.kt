@@ -18,6 +18,7 @@ class MutableStack<E>(vararg items: E) {              // 1
 fun main() {
     val stack = MutableStack(0.62, 3.14, 2.7)
     stack.push(9.87)
+    stack.push(2.0)
     println(stack)
 
     println("peek(): ${stack.peek()}")

@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun main() {
     for (i in 0..3) {            // 1
         print(i)

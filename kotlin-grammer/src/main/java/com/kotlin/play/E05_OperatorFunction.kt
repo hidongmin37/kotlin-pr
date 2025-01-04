@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun main() {
     operator fun Int.times(str: String) = str.repeat(this)       // 1
     println(2 * "하이 ")                                          // 2

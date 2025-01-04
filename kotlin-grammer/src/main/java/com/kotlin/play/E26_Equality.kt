@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun main() {
 
     val authors = setOf("셰익스피어", "헤밍웨이", "트웨인")

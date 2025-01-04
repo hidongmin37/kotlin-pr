@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 enum class State {
     IDLE, RUNNING, FINISHED                           // 1
 }

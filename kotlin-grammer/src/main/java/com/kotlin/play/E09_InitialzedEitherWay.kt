@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun someCondition() = true
 
 fun main() {

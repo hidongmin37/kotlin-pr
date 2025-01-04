@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun describeString(maybeString: String?): String {              // 1
     if (maybeString != null && maybeString.length > 0) {        // 2
         return "문자열 길이: ${maybeString.length}"
@@ -8,4 +10,5 @@ fun describeString(maybeString: String?): String {              // 1
 
 fun main() {
     println(describeString(null))
+    println(describeString(""))
 }

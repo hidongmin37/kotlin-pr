@@ -10,4 +10,5 @@ fun main() {
 
     println(contact.id)                         // 5
     contact.email = "jane@gmail.com"            // 6
+    println(contact.email)
 }

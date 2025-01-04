@@ -3,4 +3,5 @@ fun main() {
     println(a)
     val b: Int = 1             // 2
     val c = 3                  // 3
+
 }

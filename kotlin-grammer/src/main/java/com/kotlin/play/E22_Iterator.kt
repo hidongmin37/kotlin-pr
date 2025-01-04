@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 class Animal(val name: String)
 
 class Zoo(val animals: List<Animal>) {

@@ -1,3 +1,7 @@
+package com.kotlin.play
+
+import MutableStack
+
 fun <E> mutableStackOf(vararg elements: E) = MutableStack(*elements)
 
 fun main() {

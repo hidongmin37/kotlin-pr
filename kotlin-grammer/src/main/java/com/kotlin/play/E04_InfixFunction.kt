@@ -24,4 +24,7 @@ class Person(val name: String) {
     infix fun likes(other: Person) {
         likedPeople.add(other)
     }  // 6
+
+
+    // infix는 로컬 함수
 }
