@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 const val POINTS_X_PASS: Int = 15
 val EZPassAccounts: MutableMap<Int, Int> = mutableMapOf(1 to 100, 2 to 100, 3 to 100)   // 1
 val EZPassReport: Map<Int, Int> = EZPassAccounts                                        // 2
@@ -14,7 +16,8 @@ fun updatePointsCredit(accountId: Int) {
 fun accountsReport() {
     println("EZ-Pass 현황:")
     EZPassReport.forEach {                                                              // 5
-            k, v -> println("ID $k: 포인트 $v")
+            (k, v) ->
+        println("ID $k: 포인트 $v")
     }
 }
 

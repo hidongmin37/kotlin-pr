@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun rentPrice(standardDays: Int, festivityDays: Int, specialDays: Int): Unit {  // 1
 
     val dayRates = object {                                                     // 2
@@ -13,5 +15,6 @@ fun rentPrice(standardDays: Int, festivityDays: Int, specialDays: Int): Unit {  
 }
 
 fun main() {
-    rentPrice(10, 2, 1)                                                         // 5
+    rentPrice(10, 2, 1)
+// 5
 }

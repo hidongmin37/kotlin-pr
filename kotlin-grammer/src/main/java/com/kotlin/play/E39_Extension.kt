@@ -1,12 +1,20 @@
+package com.kotlin.play
+
 data class Item(val name: String, val price: Int)                                      // 1
 
-data class Order(val items: Collection<Item>)
-
-fun Order.maxPricedItemValue(): Int = this.items.maxByOrNull { it.price }?.price ?: 0  // 2
-fun Order.maxPricedItemName() = this.items.maxByOrNull { it.price }?.name ?: "NO_PRODUCTS"
-
-val Order.commaDelimitedItemNames: String                                              // 3
-    get() = items.map { it.name }.joinToString()
+//data class Order(val items: Collection<Item>)
+//
+//fun Order.maxPricedItemValue(): Int = this.items.maxByOrNull { it.price }?.price ?: 0  // 2
+//fun Order.maxPricedItemName() = this.items.maxByOrNull { it.price }?.name ?: "NO_PRODUCTS"
+//
+//val Order.commaDelimitedItemNames: String                                              // 3
+//    get() = items.joinToString { it.name }
+data class Order(val items: Collection<Item>) {
+    fun maxPricedItemValue(): Int = items.maxByOrNull { it.price }?.price ?: 0
+    fun maxPricedItemName() = items.maxByOrNull { it.price }?.name ?: "NO_PRODUCTS"
+    val commaDelimitedItemNames: String
+        get() = items.joinToString { it.name }
+}
 
 fun main() {
 

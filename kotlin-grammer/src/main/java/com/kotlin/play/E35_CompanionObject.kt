@@ -1,7 +1,7 @@
 class BigBen {                                  //1
-    companion object Bonger {                   //2
+    companion object {                   //2
         fun getBongs(nTimes: Int) {             //3
-            for (i in 1 .. nTimes) {
+            for (i in 1..nTimes) {
                 print("BONG ")
             }
         }

@@ -1,6 +1,8 @@
+package com.kotlin.play
+
 fun main() {
 
-    val words = listOf("컬렉션에", "있는", "어떤", "아이템", "골라서", "찾기")           // 1
+    val words = listOf("컬렉션에", "있는", "어떤", "아이템", "골라서", "아이들", "찾기")           // 1
 
     val first = words.find { it.startsWith("아이") }                                // 2
     val last = words.findLast { it.startsWith("아이") }                             // 3

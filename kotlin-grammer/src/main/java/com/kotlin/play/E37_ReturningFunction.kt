@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun operation(): (Int) -> Int {                                     // 1
     return ::square
 }

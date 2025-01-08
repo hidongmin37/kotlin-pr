@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 val openIssues: MutableSet<String> =
     mutableSetOf("uniqueDescr1", "uniqueDescr2", "uniqueDescr3") // 1
 
