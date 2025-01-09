@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun main() {
 
 
@@ -7,7 +9,8 @@ fun main() {
         Person("석구", "서울", "02-1234-5678"),
         Person("성태", "부산", "051-234-9876"),
         Person("효리", "제주", "064-123-4567"),
-        Person("상순", "제주", "064-234-8901"))
+        Person("상순", "제주", "064-234-8901")
+    )
 
     val phoneBook = people.associateBy { it.phone }                          // 3
     val cityBook = people.associateBy(Person::phone, Person::city)           // 4

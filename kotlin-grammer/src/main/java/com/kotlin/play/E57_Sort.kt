@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 import kotlin.math.abs
 
 fun main() {
@@ -6,7 +8,7 @@ fun main() {
     val natural = shuffled.sorted()                             // 2
     val inverted = shuffled.sortedBy { -it }                    // 3
     val descending = shuffled.sortedDescending()                // 4
-    val descendingBy = shuffled.sortedByDescending { abs(it)  } // 5
+    val descendingBy = shuffled.sortedByDescending { abs(it) } // 5
 
     println("무작위순: $shuffled")
     println("오름차순: $natural")

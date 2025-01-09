@@ -1,9 +1,11 @@
+package com.kotlin.play
+
 fun main() {
 
     val words = listOf("foo", "bar", "baz", "faz")         // 1
     val empty = emptyList<String>()                        // 2
 
-    val first = empty.firstOrNull()                        // 3
+    val first = empty.firstOrNull()                   // 3
     val last = empty.lastOrNull()                          // 4
 
     val firstF = words.firstOrNull { it.startsWith('f') }  // 5
