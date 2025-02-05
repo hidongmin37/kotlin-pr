@@ -1,6 +1,6 @@
-package com.kotlin
+package com.kotlin.example
 
-val person2  = Pair("snow",true)
+val person2 = Pair("snow", true)
 
 val persons = mapOf(
     "Snow" to true,
@@ -13,7 +13,8 @@ fun main() {
     println("$name is $isMarried")
 
     persons.forEach { (name, isMarried) ->
-        println("$name is married $isMarried") }
+        println("$name is married $isMarried")
+    }
 
     // isMarried 미사용
     persons.forEach { (name, _) ->

@@ -1,4 +1,4 @@
-package com.kotlin
+package com.kotlin.example
 
 open class Person(
     val name: String,

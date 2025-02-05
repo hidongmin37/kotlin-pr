@@ -6,6 +6,8 @@ fun main() {
     val user = getUser()
     val (username, email) = user                            // 2
     println(username == user.component1())                  // 3
+    println("email = $email, username = $username")
+
 
     val (_, emailAddress) = getUser()                       // 4
 

@@ -16,7 +16,7 @@ fun main() {
         println("올해에는 2월 29일이 없습니다...")
     }
 
-    if (date is LocalDate) {
+    if (date is LocalDate) { // Smart cast to 'LocalDate'
         val month = date.monthValue                 // 5
         println(month)
     }

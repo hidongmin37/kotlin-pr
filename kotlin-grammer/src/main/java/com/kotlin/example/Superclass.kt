@@ -1,4 +1,4 @@
-package com.kotlin
+package com.kotlin.example
 
 open class Parent(
     val familyName: String = "DefaultName",

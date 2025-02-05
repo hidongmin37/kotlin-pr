@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 class LazySample {
     init {
         println("created!")            // 1

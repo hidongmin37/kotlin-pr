@@ -1,4 +1,4 @@
-package com.kotlin
+package com.kotlin.example
 
 fun evenOrOdd(n: Int) = when {
     n % 2 == 0 -> "$n even"

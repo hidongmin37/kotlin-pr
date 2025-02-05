@@ -1,3 +1,5 @@
+package com.kotlin.play
+
 fun main() {
     val greeting = "Kotliner"
 

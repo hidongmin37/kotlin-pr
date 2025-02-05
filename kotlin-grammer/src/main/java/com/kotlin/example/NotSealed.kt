@@ -1,18 +1,18 @@
-package com.kotlin
+package com.kotlin.example
 
 interface Error {}
 
 
-class FileError(val fileName:String): Error
-class DatabaseError(val dbmsType:DbmsType): Error
-class OsError(val osType:OsType): Error
+class FileError(val fileName: String) : Error
+class DatabaseError(val dbmsType: DbmsType) : Error
+class OsError(val osType: OsType) : Error
 
 enum class OsType {
-    WINDOWS,MACOS,LINUX
+    WINDOWS, MACOS, LINUX
 }
 
 enum class DbmsType {
-    MYSQL,MARIA,ORACLE,H2
+    MYSQL, MARIA, ORACLE, H2
 }
 
 fun getCharacter(error: Error) = when (error) {

@@ -1,4 +1,4 @@
-package com.kotlin
+package com.kotlin.example
 
 import java.util.TreeMap
 
@@ -7,7 +7,7 @@ fun main() {
 
     for (c in 'A'..'Z') {
         val binary = Integer.toBinaryString(c.code)
-        binaryReps[c] =  binary
+        binaryReps[c] = binary
     }
 
     for ((key, value) in binaryReps) {

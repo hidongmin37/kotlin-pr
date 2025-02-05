@@ -1,4 +1,4 @@
-package com.kotlin;
+package com.kotlin.example;
 
 import java.util.ArrayDeque;
 

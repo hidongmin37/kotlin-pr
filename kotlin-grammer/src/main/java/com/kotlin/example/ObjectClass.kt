@@ -1,4 +1,4 @@
-package com.kotlin
+package com.kotlin.example
 
 object ObjectFamily {
     val members = mutableListOf<Person>()

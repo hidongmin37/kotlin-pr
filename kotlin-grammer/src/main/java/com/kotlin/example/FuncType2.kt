@@ -1,13 +1,13 @@
-package com.kotlin
+package com.kotlin.example
 
 fun String.double() = this + this + "hey"
-fun String.double2(add:String) = this + this + add
+fun String.double2(add: String) = this + this + add
 
-fun double3(add:String) = add + add
+fun double3(add: String) = add + add
 
 fun Int.toString() = "$this"
 
-infix fun String.addFront(frontString: String) = frontString +this
+infix fun String.addFront(frontString: String) = frontString + this
 
 fun String.pany() = this.length
 
@@ -30,7 +30,7 @@ fun main() {
     val maxOrNull = setOf(1, 23, 45, 4).maxOrNull()
     println(maxOrNull)
 
-    println(listOf("ab","bc","cd").last())
+    println(listOf("ab", "bc", "cd").last())
 
 
     println("This is ver".addFront("ad"))

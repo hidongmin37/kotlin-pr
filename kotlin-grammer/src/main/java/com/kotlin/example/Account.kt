@@ -1,4 +1,4 @@
-package com.kotlin
+package com.kotlin.example
 
 class Account {
     var balance: Long = 0

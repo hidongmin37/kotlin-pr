@@ -1,19 +1,20 @@
-package com.kotlin
+package com.kotlin.example
+
 sealed class SealedError {
 
-    class SealedFileError(val fileName: String): SealedError()
-    class SealedDatabaseError(val dbmsType: SealedDbmsType): SealedError()
-    class SealedOsError(val osType: SealedOsType): SealedError()
+    class SealedFileError(val fileName: String) : SealedError()
+    class SealedDatabaseError(val dbmsType: SealedDbmsType) : SealedError()
+    class SealedOsError(val osType: SealedOsType) : SealedError()
 
 }
 
 
 enum class SealedOsType {
-    WINDOWS,MACOS,LINUX
+    WINDOWS, MACOS, LINUX
 }
 
 enum class SealedDbmsType {
-    MYSQL,MARIA,ORACLE,H2
+    MYSQL, MARIA, ORACLE, H2
 }
 
 fun getCharacter(error: SealedError) = when (error) {

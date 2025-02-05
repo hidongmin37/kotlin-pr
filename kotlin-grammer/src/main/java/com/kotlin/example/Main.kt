@@ -1,3 +1,5 @@
+package com.kotlin.example
+
 fun main() {
     println("Hello, World!")
     val maxValue = max(5, 3)
@@ -10,16 +12,15 @@ fun main() {
     val question = "What's wrong?"
     val answer = 123
     val poet: String = "Let it be forgotten"
-    val age:Int = 25
+    val age: Int = 25
 
     // var는 변경 가능
     var changeable = "old"
     changeable = "new"
 
 
-
 }
 
 
-fun max(a: Int, b: Int): Int = if (a>b) a else b
-fun min(a: Int, b: Int): Int = if (a<b) a else b
+fun max(a: Int, b: Int): Int = if (a > b) a else b
+fun min(a: Int, b: Int): Int = if (a < b) a else b

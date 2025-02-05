@@ -1,4 +1,4 @@
-package com.kotlin
+package com.kotlin.example
 
 data class DataUser(val userName: String, val age: Int)
 

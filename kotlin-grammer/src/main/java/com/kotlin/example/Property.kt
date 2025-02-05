@@ -1,4 +1,4 @@
-package com.kotlin
+package com.kotlin.example
 
 class User(val userName: String)
 
@@ -10,7 +10,7 @@ class User2 constructor(_userName: String) {
     }
 }
 
-class User3 (_userName: String) {
+class User3(_userName: String) {
     val userName: String = _userName
 }
 

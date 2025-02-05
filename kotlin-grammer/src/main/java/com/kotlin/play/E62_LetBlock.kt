@@ -1,5 +1,7 @@
+package com.kotlin.play
+
 fun customPrint(s: String) {
-    print(s.uppercase())
+    println(s.uppercase())
 }
 
 fun main() {
@@ -14,7 +16,7 @@ fun main() {
         println("\"$str\" 프린트:")
 
         str?.let {                         // 4
-            print("\t")
+            print("t")
             customPrint(it)
             println()
         }
@@ -31,5 +33,7 @@ fun main() {
 
     printNonNull(null)
     printNonNull("문자열")
-    printIfBothNonNull("첫번째", "두번째")
+    printIfBothNonNull("첫번째", "두번째2")
+    printIfBothNonNull(null, "두번째")
+    printIfBothNonNull("첫번째", null)
 }
