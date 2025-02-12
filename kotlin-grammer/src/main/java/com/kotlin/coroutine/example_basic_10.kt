@@ -13,9 +13,9 @@ fun main() = runBlocking{
 
     }
 
-    delay(1300L)
+    delay(2000L)
     println("main: I'm tired of waiting!")
-    job.cancel()
+    job.cancel() // 코루틴 중단
     job.join()
     println("main: Now I can quit.")
 }
